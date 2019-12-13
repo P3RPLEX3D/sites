@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+#header-main h1 {
+    background-color: rgb(40, 111, 158);
+    padding:20px;
+    text-align: center;
+    color: #fff;
+}
