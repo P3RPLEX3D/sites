@@ -1,8 +1,7 @@
-document.addEventListener('click', function parint() {
-	document.getElementById('button');
+var x = document.getElementById('button');
+x.addEventListener('click', function prinit() {
 	window.print();
-});
-
+})
 document.addEventListener('keydown',function createItem() {
 var input = document.getElementById('demo').value;
 localStorage.setItem('server', input);
