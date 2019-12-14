@@ -1,39 +1,49 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+	margin: 0;
+	box-sizing:  border-box;
 }
 body {
-    margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
-    
+	margin: 0 auto;
 }
-#header-main h1 {
-    background-color: rgb(248, 250, 252);
-    padding:20px;
-    text-align: center;
-    color: #fff;
+#document {
+	display: flex;
+	flex-flow: column wrap;
+	align-content: center;
+	justify-content: center;
+	height:65vh;
+	width: 100%;
+	margin: auto;
 }
-#flex-wrapper {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    
+
+header {
+	text-align: center;
+	font-size: 1.5em;
+	padding: 1rem;
 }
-header h2 {
-    padding: 20px;
-    border-radius: 13px;
-    margin-top: 200px;
-    /* border: 3px solid rgb(150, 148, 148); */
-    color: rgb(54, 56, 56);
-    background-color: rgba(5, 6, 8, 0);
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    cursor: pointer;
+p {
+	padding: 20px;
 }
-#button h2:active {
-    user-select: none;
-    box-shadow: none;
-    border-bottom: 2px solid;
-    border-top: 2px solid;
+textarea {
+	margin: auto;
+	width: 100%;
+	height: 300px;
+	resize: none;
+	font-size: 16px;
+	border: 0px;
+	outline-color: #fff;
+ line-height: 1.75rem;
+	padding: 20px;
+}
+#button {
+	padding: 10px;
+	margin: auto;
+}
+
+@media screen and (min-width: 500px) {
+	#document {
+		max-width: 60%;
+		border-top:3px solid;
+		border-bottom: 3px solid;
+		border-color: rgba(000,000,000, 0.3);
+	}
 }
