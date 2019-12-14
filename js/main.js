@@ -11,7 +11,7 @@ document.getElementById('demo').innerHTML = localStorage.getItem('server');
 
 var x = document.getElementById('button');
 x.addEventListener('click', function prinit() {
-	Export2Doc('exportContent' ,'word-content')
+	Export2Doc('exportedContent' ,'word-content')
 })
 
 
