@@ -1,5 +1,4 @@
 document.getElementById('button').onclick = function printMe() {
-	let x = document.getElementById('demo');
 	window.print();
 }
 
