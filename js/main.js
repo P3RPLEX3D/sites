@@ -1,6 +1,7 @@
-document.getElementById('button').onclick = function printIt() {
+document.addEventListener('click', function parint() {
+	document.getElementById('button');
 	window.print();
-}
+});
 
 document.addEventListener('keydown',function createItem() {
 var input = document.getElementById('demo').value;

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/P3RPLEX3D/sites/issues"
   },
-  "homepage": "https://github.com/P3RPLEX3D/sites#readme"
+  "homepage": "https://github.com/P3RPLEX3D/sites#readme",
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  }
 }
