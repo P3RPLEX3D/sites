@@ -3,7 +3,8 @@
 	box-sizing:  border-box;
 }
 body {
-	margin: 0 auto;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 #document {
 	display: flex;
@@ -17,7 +18,7 @@ body {
 
 header {
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1em;
 	padding: 1rem;
 }
 p {
@@ -34,11 +35,22 @@ textarea {
  line-height: 1.75rem;
 	padding: 20px;
 }
-#button {
-	padding: 10px;
-	margin: auto;
-}
 
+footer {
+	display: flex;
+	font-size: 18px;
+	margin:25px auto;
+}
+#button{
+	margin:0 auto;
+	height:50px;
+
+
+	
+
+
+	
+}
 @media screen and (min-width: 500px) {
 	#document {
 		max-width: 60%;
