@@ -18,5 +18,8 @@
   "homepage": "https://github.com/P3RPLEX3D/sites#readme",
   "devDependencies": {
     "eslint": "^6.7.2"
+  },
+  "dependencies": {
+    "docx": "^5.0.0-rc7"
   }
 }
