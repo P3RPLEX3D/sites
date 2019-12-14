@@ -1,4 +1,4 @@
-document.getElementById('button').onclick = function printMe() {
+document.getElementById('button').onclick = function printIt() {
 	window.print();
 }
 
