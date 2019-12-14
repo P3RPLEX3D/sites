@@ -15,7 +15,7 @@ x.addEventListener('click', function prinit() {
 })
 
 
-function Export2Doc(element, filename = ''){
+function Export2Doc(demo, filename = ''){
     var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
     var postHtml = "</body></html>";
     var html = preHtml+document.getElementById('demo').innerHTML+postHtml;
