@@ -1,4 +1,4 @@
-document.getElementById('demo').onkeypress = function createItem() {
+document.getElementById('demo').onkeydown = function createItem() {
     var input = document.getElementById('demo').value;
     localStorage.setItem('server', input);
     }
