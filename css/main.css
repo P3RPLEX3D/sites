@@ -64,6 +64,8 @@ footer {
 
 	
 }
+
+
 @media screen and (min-width: 500px) {
 	#document {
 		max-width: 60%;
@@ -71,6 +73,11 @@ footer {
 		border-bottom: 3px solid;
 		border-color: rgba(000,000,000, 0.3);
 	}
+}
+@media screen and (max-width:300px) {
+     img {
+        display: none;
+    }
 }
 em {
 	font-size: 12px;
