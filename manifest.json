@@ -1,0 +1,15 @@
+{
+  "short_name": "Magic Note Maker",
+  "name": "Magic Note Maker",
+  "icons": [
+    {
+      "src":"images/print.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://magicnotemaker.netlify.com",
+  "background_color": "#ffffff",
+  "Theme_color": "#ffffff",
+  "display": "standalone"
+}
