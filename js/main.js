@@ -1,6 +1,6 @@
 
-	window.onload(localStorage.getItem('token', 'key'));
-
+	const input = document.getElementById('orange').value;
+    window.onload = localStorage.getItem('server', input)
 
 	function allowDrop(ev) {
 		ev.preventDefault();
@@ -11,8 +11,16 @@
 	}
 
 	function drop(ev) {
-		localStorage.setItem("token", 'key');
+        let input = document.getElementById('orange').value;
+		localStorage.setItem("server", input);
 		ev.preventDefault();
 		var data = ev.dataTransfer.getData("text");
 		ev.target.appendChild(document.getElementById(data));
-	}
+    }
+    document.addEventListener('keyup', function freshInfo() {
+        var input = document.getElementById('orange').value; 	
+        localStorage.getItem('server', input);
+        
+        console.log('set storage');
+    } );
+    
