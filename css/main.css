@@ -56,6 +56,9 @@ footer {
 	#button {
 	   display: none;
    }
+   header {
+	   font-size: 1em;
+   }
 }
 @media screen and (min-width: 500px) {
 	#document {
@@ -67,6 +70,7 @@ footer {
 	#button {
 		display: flex;
 	}
+
 }
 
 em {
