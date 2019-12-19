@@ -1,122 +1,70 @@
 * {
 	margin: 0;
-	box-sizing: border-box;
-}
-html {
-	scroll-behavior: smooth;
-	margin: 0;
-}
-.container header h1, h3  {
-	background-color: rgb(0, 0, 0);
-	color: rgb(245, 241, 241);
-	border-radius: 0px;
+	box-sizing:  border-box;
 }
 body {
-	background-color: rgb(254, 254, 255);
-	max-width: 60%;
-	margin: 0 auto;
-	background-repeat: no-repeat;
-	height: 100vh;
-	font-family: "Montserrat", sans-serif;
-	font-size: 18px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    
 }
-@media screen and (max-width: 900px) {
-	html,
-	body {
-		max-width: 100%;
-		padding: 0;
-		margin: 0;
-	}
-}
-
-.container {
+#document {
 	display: flex;
 	flex-flow: column wrap;
 	align-content: center;
 	justify-content: center;
-	margin: 0;
+	height:65vh;
+	width: 100%;
+	margin: auto;
 }
 
-.paper {
-	width: 100%;
-	box-shadow: 0px 0px 8px 1px #ccca;
-	background-color: #fff;
-	border-radius: 10px;
-	
-	margin: 0 auto;
+header {
+	text-align: center;
+	font-size: 1em;
+	padding: 1rem;
+}
+p {
 	padding: 20px;
-	padding-top: 50px;
-	padding-bottom: 50px;
 }
-.paper p {
-	margin:0;
-	margin-bottom: 30px;
-	margin-top: 30px;
-	
-}
-.paper h3 {
-	text-align: center;
-}
-header h1 {
-	background-color: #fff;
-	
-	text-align: center;
-	border-radius: 10px;
-	padding: 30px;
-}
-header h2 {
-	
-	opacity: 2;
-	margin: 20px;
-	text-align: center;
-}
-.header-em {
-    font-size: 0.8rem;
-    text-align: center;
-    width:100%;
-    margin: 0 0 30px;
-
-}
-h3 {
-	padding: 10px;
-	width: 100%;
-}
-img {
-	width:50%;
-	margin: auto;
-}
-.fire {
+#demo {
 	margin: auto;
 	width: 100%;
-	text-align: center;
+	height: 300px;
+	resize: none;
+	font-size: 16px;
+	border: 0px;
+	outline-color: #fff;
+ line-height: 1.75rem;
+	padding: 20px;
+    
 }
-#text {
-	width: 100%;
-	margin:0 auto;
 
-	padding: 0px;
-	line-height: 1.8em;
-}
-a {
-	color: firebrick;
-	text-decoration: none;
-	transition: 0.5s;
-}
-a:hover {
-	font-weight: bold;
-}
 footer {
-	text-align: right;
+	display: flex;
+	font-size: 18px;
+	margin:25px auto;
+}
+#button{
+	margin:0 auto;
+	height:50px;	
+}
+
+@media only screen and (min-width:0px) {
+	#button {
+	   display: none;
+   }
+}
+@media screen and (min-width: 500px) {
+	#document {
+		max-width: 60%;
+		border-top:3px solid;
+		border-bottom: 3px solid;
+		border-color: rgba(000,000,000, 0.3);
+	}
+	#button {
+		display: flex;
+	}
+}
+
+em {
 	font-size: 12px;
-}
-li {
-    margin:0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-#shrine {
-    width: 100%;
-}
-p span {
-    text-align: center;
 }
