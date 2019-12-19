@@ -57,7 +57,7 @@ footer {
 	   display: none;
    }
    header {
-	   font-size: 1em;
+	   font-size: 1.25em;
    }
 }
 @media screen and (min-width: 500px) {
@@ -69,6 +69,12 @@ footer {
 	}
 	#button {
 		display: flex;
+	}
+	header {
+		font-size: 2.5em;
+	}
+	header p {
+		font-size: 0.8em;
 	}
 
 }
