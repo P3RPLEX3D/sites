@@ -28,14 +28,14 @@ p {
 #demo {
 	margin: auto;
 	width: 100%;
-	height: 300px;
+	height: 500px;
 	resize: none;
 	font-size: 16px;
-	border: 0px;
+	border: 0;
 	outline-color: #fff;
  line-height: 1.75rem;
 	padding: 20px;
-    
+    background-color:ghostwhite;
 }
 
 footer {
