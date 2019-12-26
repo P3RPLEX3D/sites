@@ -1,7 +1,6 @@
-onload = function() {
-    localStorage.getItem('saved');
-    
-}
-onkeypress = function() {
-    localStorage.setItem('saved');
+window.onload = function readValue() {
+	document.getElementById("input").innerHTML = localStorage.getItem("server");
+};
+window.onkeypress = function() {
+    localStorage.setItem('server');
 }
