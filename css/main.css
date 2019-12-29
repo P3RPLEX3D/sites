@@ -1,68 +1,26 @@
-:root {
-    --bg: darkslategrey;
-}
 
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
 
 body {
-    margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--bg);
-}
-#header-main h1 {
-    
-    position: absolute;
-    top:200px;
-    height:100px;
-    width: 100%;
-    background-size: cover;
-    font-family: 'Gloria Hallelujah', cursive;
-     background-position: center;
-    font-size: 5em;
-    padding:20px;
-    text-align: center;
-    color: #eeeeee;
-}
-#flex-wrapper {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    
-}
-#morgana {
-    position: fixed;
     margin: auto;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    background-position: center;
-    background-origin: border-box;
-    background-clip: center;
-    object-fit: cover;
-}
-#container {
-    
-    background-size: cover;
+    box-sizing: border-box;
+    background-color: black;
 }
 
-[controls] {
-    width: 100%;
-    position: absolute;
-    bottom:0;
-    margin:0 auto;
-    color: green;
-    opacity: 0.2;
-    margin-bottom: 20px;
-}
-@media only screen and (max-width: 500px) {
-    audio {
-        top: 30px;
-        
+
+input[type=checkbox] {
+    display: none;
+  }
+  
+  .container img {
+      
+    transform: scale(0.5);
+    transition: transform 2.25s ease;
+    cursor: zoom-in;
+  }
+  
+  input[type=checkbox]:checked ~ label > img {
+    transform: scale(1);
+    cursor: zoom-out;
     
-    }
-}
+  }
