@@ -49,3 +49,11 @@ body {
     
     background-size: cover;
 }
+
+[controls] {
+    
+    position: absolute;
+    bottom:0;
+    margin: auto;
+    color: green;
+}
