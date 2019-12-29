@@ -56,7 +56,7 @@ body {
     bottom:0;
     margin:0 auto;
     color: green;
-    opacity: 0.1;
+    opacity: 0.2;
     margin-bottom: 20px;
 }
 @media only screen and (max-width: 500px) {
