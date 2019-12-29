@@ -57,9 +57,12 @@ body {
     margin:0 auto;
     color: green;
     opacity: 0.1;
+    margin-bottom: 20px;
 }
 @media only screen and (max-width: 500px) {
     audio {
-        top: 0;
+        top: 30px;
+        opacity: 1;
+    
     }
 }
