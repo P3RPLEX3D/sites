@@ -31,3 +31,22 @@ body {
       object-fit: cover;
       
   }
+  nav {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px;
+      background-color: rgba(108, 178, 212, 0.301);
+      width: auto;
+      font-size: 1.25em;
+      border-radius: 50%;
+      
+      
+  }
+  a {
+      text-decoration:  none;
+      color: white;
+  }
+  a:hover {
+      color: rgba(53, 11, 87, 0.281);
+  }
