@@ -12,6 +12,7 @@ body {
     height:900px;
     margin:auto;
     
+    
 }
 
 .container {
@@ -28,4 +29,5 @@ body {
       padding: 0;
       margin:0 auto;
       object-fit: cover;
+      
   }
