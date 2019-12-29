@@ -1,30 +1,47 @@
 
-
-
-body {
-    margin: auto;
+* {
+    margin: 0;
     box-sizing: border-box;
-    background-color: black;
 }
 
+body {
 
+
+    background-color: #222;
+    width: 1600px;
+    height:900px;
+    margin:auto;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    
+    margin:auto;
+    
+}
 input[type=checkbox] {
     display: none;
   }
   
   .container img {
       
-    transform: scale(1);
-    transition: transform 2.25s ease;
-    cursor: zoom-in;
+    width: 175%;
+    /* transform: scale(2); */
+    transition: 2.25s ease;
+    cursor: zoom-out;
   }
   
   input[type=checkbox]:checked ~ label > img {
-    transform: scale(2);
-    cursor: zoom-out;
-    margin: 10%;
+    /* transform: scale(1); */
+    cursor: zoom-in;
+    width: 100%;
+    margin: auto;
   }
-  #map {
+  img {
       width: 100%;
-      height: 100%;
+      
+      margin: auto;
   }
