@@ -45,9 +45,9 @@ body {
   }
   a {
       text-decoration:  none;
-      color: white;
+      color:#2eb;
       padding: 10px;
   }
   a:hover {
-      color: #2eb;
+      color: tomato;
   }
