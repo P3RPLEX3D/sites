@@ -50,10 +50,12 @@ body {
     background-size: cover;
 }
 @media only screen and (max-width: 500px) {
-    audio {
-        top: 30px;
+    html {
+        position: fixed;
         
-    
+    }
+    #header-main h1 {
+        font-size: 2.8em;
     }
     
 }
