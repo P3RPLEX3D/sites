@@ -62,7 +62,7 @@ body {
 @media only screen and (max-width: 500px) {
     audio {
         top: 30px;
-        opacity: 1;
+        
     
     }
 }
