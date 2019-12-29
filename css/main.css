@@ -58,8 +58,8 @@ body {
     color: green;
     opacity: 0.1;
 }
-@media screen and (maxwidth: 350px) {
-    [controls] {
+@media only screen and (max-width: 500px) {
+    audio {
         top: 0;
     }
 }
