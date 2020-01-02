@@ -2,12 +2,13 @@
 			margin: 0 auto;
 			box-sizing: border-box;
 			font-family: 'Montserrat', sans-serif;
+			-webkit-overflow-scrolling: touch;
 
 		}
 
 		html {
 			scroll-behavior: smooth;
-			-webkit-overflow-scrolling: touch;
+			
 		}
 
 		body {
