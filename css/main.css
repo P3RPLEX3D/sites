@@ -3,9 +3,6 @@
     --silver: #d4d4dc;
     --grey: #393f4d;
     --slate: #1d1e22;
-    --sm: 1em;
-    --med: 2em;
-    --lg: 3em;
 }
 * {
     margin: 0;
@@ -14,7 +11,6 @@
 }
 body {
     margin: 0;
-    font-size: var(--lg);
 }
 #container {
     display: flex;
@@ -40,11 +36,6 @@ body {
 }
 #slate {
     background: var(--slate);
-    height: 100vh;
-    width: 100%;
-}
-#lin {
-    background: var(--img);
     height: 100vh;
     width: 100%;
 }
