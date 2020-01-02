@@ -23,20 +23,23 @@ html {
 .container header h1, h3  {
 	background-color: #111;
 	color: #fff;
-	border-radius: 0px;
+    border-radius: 0px;
+    
 }
 body {
-	background-color: #fff;
+	
 	max-width: 60%;
 	margin: 0 auto;
 	background-repeat: no-repeat;
 	height: 100vh;
 	font-family: "Montserrat", sans-serif;
-	font-size: 18px;
+    font-size: 18px;
+    background: var(--light);
 }
 @media screen and (max-width: 900px) {
 	html,
-	body {
+    body,
+    .wolf {
 		max-width: 100%;
 		padding: 0;
 		margin: 0;
@@ -48,12 +51,14 @@ body {
 	flex-flow: column wrap;
 	align-content: center;
 	justify-content: center;
-	margin: 0;
+    margin: 0 auto;
+    
+    font-size: var(--sm);
 }
 
 .paper {
 	width: 100%;
-	box-shadow: 0px 0px 8px 1px #ccca;
+	/* box-shadow: 0px 0px 8px 1px #ccca; */
 	background-color: #fff;
 	border-radius: 10px;
 	
@@ -71,15 +76,15 @@ body {
 .paper h3 {
 	text-align: center;
 }
-header h1 {
-	background-color: #fff;
-	
-	text-align: center;
-	border-radius: 10px;
-	padding: 30px;
+header h1{
+    background-color: var(--dark);
+    color: var(--light);
+    width: 100%;
+    text-align: center;
+    padding: 30px;
 }
 header h2 {
-	
+	color: var(--info);
 	opacity: 2;
 	margin: 20px;
 	text-align: center;
@@ -93,19 +98,20 @@ header h2 {
 }
 h3 {
 	padding: 10px;
-	width: 100%;
+    width: 100%;
+    color: var(--light);
 }
 img {
 	width:100%;
 	margin: auto;
 }
-.fire {
+.wolf {
 	margin: auto;
-	width: 100%;
+	max-width: 60%;
 	text-align: center;
 }
 #text {
-	width: 100%;
+	
 	margin:0 auto;
 
 	padding: 0px;
@@ -130,6 +136,7 @@ li {
 }
 #shrine {
     width: 100%;
+    border: 3px solid;
 }
 p span {
     text-align: center;
