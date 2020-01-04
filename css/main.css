@@ -20,7 +20,7 @@
 html {
 	scroll-behavior: smooth;
 	margin: 0;
-	background-color: var(--danger);
+	background-color: var(--dark);
 	background-image: url('https://images.unsplash.com/photo-1518128160709-c575457dafa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1824&q=80');
 	background-size: 100%;
 	background-position: center;
