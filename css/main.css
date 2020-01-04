@@ -1,5 +1,17 @@
 :root {
 	--bg: darkslategrey;
+	--sm:1.25em;
+    --med:2em;
+    --lg:3em;
+    --primary:#007bff;
+    --secondary:#6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+	--light: #f8f9fa;
+	--light2: #fff;
+    --dark: #000;
 	
 }
 
@@ -12,7 +24,7 @@
 body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    background: var(--bg);
+    background: var(--dark);
 }
 #header-main h1 {
     
@@ -30,9 +42,12 @@ body {
 	user-select: none;
 }
 #header-main em {
+	
 	position: absolute;
-	top: 0;
+	bottom: 10%;
+	right: 41%;
 	color: var(--warning);
+    font-size: var(--sm);
 }
 #flex-wrapper {
     display: flex;
@@ -58,12 +73,28 @@ body {
 }
 @media only screen and (max-width: 500px) {
     html {
-        position: fixed;
+		position: fixed;
+		background-color: #000;
         
     }
     #header-main h1 {
-        font-size: 2.8em;
-    }
+		position: fixed;
+		max-width: 100%;
+		font-size: var(--lg);
+		width: 100%;
+		
+	}
+	#header-main em {
+		position: fixed;
+		max-width: 100%;
+		font-size: var(--sm);
+		left: 5%;
+		right: 5%;
+		bottom: 10%;
+		margin: auto;
+		text-align: center;
+	}
+	
     
 }
 #map {
