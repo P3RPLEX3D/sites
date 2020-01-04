@@ -25,7 +25,8 @@ body {
     font-size: 5em;
     padding:20px;
     text-align: center;
-    color: #eeeeee;
+	color: #eeeeee;
+	user-select: none;
 }
 #flex-wrapper {
     display: flex;
