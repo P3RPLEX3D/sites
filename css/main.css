@@ -1,5 +1,6 @@
 :root {
-    --bg: darkslategrey;
+	--bg: darkslategrey;
+	
 }
 
 
@@ -27,6 +28,11 @@ body {
     text-align: center;
 	color: #eeeeee;
 	user-select: none;
+}
+#header-main em {
+	position: absolute;
+	top: 0;
+	color: var(--warning);
 }
 #flex-wrapper {
     display: flex;
