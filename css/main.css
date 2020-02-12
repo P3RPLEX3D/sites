@@ -30,10 +30,15 @@ header h2 {
     border-bottom: 1px solid;
     border-top: 1px solid;
     cursor: pointer;
+    
 }
 #button h2:active {
     user-select: none;
     box-shadow: none;
     border-bottom: 2px solid;
     border-top: 2px solid;
+}
+a {
+    text-decoration: none;
+    color: deepskyblue;
 }
