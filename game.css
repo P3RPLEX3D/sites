@@ -1,0 +1,10 @@
+header {
+    color: #555;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+
+}
+ul li {
+    font-size: 1.25em;
+}
