@@ -1,0 +1,25 @@
+:root {
+    --db:#594021;
+    --lb:#674e30;
+    --lg:#878579;
+    --dg:#3e3d42;
+    --drk:#1c1b20;
+    --lt: #ffffff;
+}
+
+
+
+header {
+    color: var(--lt);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: var(--drk);
+    border-radius: 10px;
+}
+ul li {
+    font-size: 1.25em;
+}
+p {
+    line-height: 2.7em;
+}
