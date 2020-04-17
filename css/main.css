@@ -25,7 +25,7 @@ header h1 {
 	cursor: pointer;
 }
 .button:active {
-	color: firebrick;
+	background-color: firebrick;
 	transform: scale(0.98);
 	transition: 0.3s;
 }
@@ -51,5 +51,6 @@ footer {
 	position: absolute;
 	bottom: 0;
 	text-align: center;
-	color: rgba(23, 80, 163, 0.9);
+    color: rgba(23, 80, 163, 0.9);
+    font-size: 50%;
 }
