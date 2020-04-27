@@ -1,56 +1,240 @@
-:root {
-    --db:#594021;
-    --lb:#674e30;
-    --lg:#878579;
-    --dg:#3e3d42;
-    --drk:#1c1b20;
+@media screen and (min-width:961px) {
+	body section{
+		width: 60%;
+		margin: auto;
+		font-size: 1.5em;
+	}
+	nav {
+		position: fixed;
+		top:0;
+		width: 100%;
+	}
+	ul li,
+	p {
+		font-size: 20px;
+	}
+	
 }
 
+@media screen and (max-width: 960px) {
+	header ul li {
+		position: relative;
+		margin: 0 auto;
+		padding: 10px;
+		text-align: left;
+		background-color: firebrick;
+		width: 100%;
+		font-size: 1em;
+	
+	}
+	header ul,
+	#nav {
+		display: block;
+		background-color: firebrick;
+		position: relative;
+		height: 350px;
+		
+	}
 
+section,
+	p {
+		width: 100%;
+		margin: auto;
+	}
+}
 
 * {
-    margin: 0;
-    box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
+}
+html {
+	scroll-behavior: smooth;
+	background-color: #e0e0e0;
 }
 body {
-    margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--lb);
-    
+	background-color: #e0e0e0;
+	font-family: "Montserrat", sans-serif;
+	margin: 0px 0px 250px auto;
+	margin-left: 0px;
 }
-#header-main h1 {
-    background-color: var(--lb);
-    padding:20px;
-    text-align: center;
-    color: var(--lg);
+section {
+	margin: auto;
+	width:100%;
 }
-#flex-wrapper {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    
+header {
+	text-align: center;
 }
-header h2 {
-    padding: 20px;
-    border-radius: 13px;
-    margin-top: 200px;
-    /* border: 3px solid rgb(150, 148, 148); */
-    color: var(--dg);
-    background-color: var(--db);
-    border-bottom: 1px solid var(--lg);
-    border-top: 1px solid var(--lg);
-    cursor: pointer;
-    
+h2 {
+
+	padding: 20px;
+	color: firebrick;
+	text-shadow: 0px 0px 1px;
 }
-#button h2:active {
-    user-select: none;
-    box-shadow: none;
-    border-bottom: 2px solid;
-    border-top: 2px solid;
+p {
+	line-height: 1.5em;
+	text-overflow: ellipsis;
+	padding: 20px;
+	box-shadow: 0px 0px 0px;
 }
+h3 {
+	border-bottom: 2px solid rgb(7, 200, 14);
+	padding-left: 20px;
+}
+h4 {
+	text-align: center;
+	border-bottom: 1px solid firebrick;
+}
+.img {
+	width: 100%;
+}
+.steps {
+	border: 1px solid #d3d3d3;
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px;
+	margin: 30px;
+}
+.steps p {
+	font-size: 16px;
+}
+
+ul li {
+	padding: 10px;
+}
+.table {
+	display: flex;
+	flex-flow: column wrap;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+
+	margin: 0 auto;
+}
+.card {
+	flex-grow: 1;
+	text-align: center;
+	padding: 10px;
+	margin: 10px auto;
+	background-color: lightgrey;
+}
+#card-flex {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+}
+.card strong {
+	text-align: center;
+	font-size: 18px;
+}
+.card i {
+	font-size: 12px;
+}
+#table td {
+	margin-bottom: 50px;
+	padding: 20px;
+	width: 150px;
+}
+#table2 td {
+	margin-bottom: 50px;
+	padding: 0px;
+}
+#table3 td {
+	margin-bottom: 50px;
+	padding: 20px;
+}
+#table4 td {
+	margin-bottom: 50px;
+	padding: 20px;
+	border: 1px solid grey;
+}
+th {
+	background-color: firebrick;
+	color: white;
+	font-size: 16px;
+	padding: 10px;
+	width: 100%;
+}
+td {
+	font-size: 14px;
+	flex-grow: 1;
+	background-color: rgb(201, 201, 201);
+	box-shadow: 0px 0px 1px;
+}
+.contents {
+	list-style: none;
+	
+}
+
+article a {
+	text-decoration: none;
+	padding: 20px;
+	
+}
+article {
+	padding-top: 200px;
+}
+article p {
+	margin-top: 30px;
+}
+nav ul {
+	position: absolute;
+	left: 0;
+	top: 0px;
+	background-color: firebrick;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	padding: 30px;
+	margin: 0 auto;
+	border-top: 3px solid firebrick;
+}
+nav li,
 a {
-    text-decoration: none;
-    color: var(--lg);
-    cursor: pointer;
+	padding: 0;
+	color: white;
+	margin: auto;
+background-color: firebrick;
+	text-decoration: none;
 }
+header a {
+	color: white;
+}
+header:hover {
+	color: firebrick;
+}
+ 
+div ul {
+	text-align: center;
+	padding: 0px;
+	box-sizing: border-box;
+	
+}
+.next {
+	padding: 20px;
+	margin: auto;
+	width: 300px;
+
+	font-weight: bold;
+	margin-top: 50px;
+}
+.next li {
+	margin: 20px;
+	padding: 20px;
+	background-color: firebrick;
+}
+.next a {
+	color: #fff;
+	text-align: center;
+}
+a:hover {
+	color: tomato;
+}
+
+p a {
+	color: firebrick;
+}
+
