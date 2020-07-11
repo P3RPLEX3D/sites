@@ -8,7 +8,7 @@ b.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let c = document.getElementById('Acrobatics');
@@ -19,7 +19,7 @@ c.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let d = document.getElementById('SleightOfHand');
@@ -30,7 +30,7 @@ d.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let e = document.getElementById('Stealth');
@@ -41,7 +41,7 @@ e.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let f = document.getElementById('Arcana');
@@ -52,7 +52,7 @@ f.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let g = document.getElementById('History');
@@ -63,7 +63,7 @@ g.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let h = document.getElementById('Investigation');
@@ -74,7 +74,7 @@ h.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let i = document.getElementById('Nature');
@@ -85,7 +85,7 @@ i.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let j = document.getElementById('Religion');
@@ -96,7 +96,7 @@ j.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let k = document.getElementById('AnimalHandling');
@@ -107,7 +107,7 @@ k.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let l = document.getElementById('Insight');
@@ -118,7 +118,7 @@ l.onclick = function() {
     }else {
         y.style.display = 'flex';
     }
-    console.log('this works')
+    
 }
 
 let m = document.getElementById('Medicine');
