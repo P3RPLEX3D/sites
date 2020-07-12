@@ -1,5 +1,7 @@
 window.addEventListener('click', event);
 
+
+
 let b = document.getElementById('Athletics');
 b.onclick = function() {
     let y = document.getElementById('AthleticsB');
