@@ -1,11 +1,11 @@
 body {
 	margin: 0 auto;
-	background-color: #222;
+	color: #555;
 	font-family: "Montserrat", sans-serif;
 }
 header h1 {
 	text-align: center;
-	color: white;
+	color: rgb(0, 0, 0);
 	box-shadow: 0px 0px 0px 3px rgb(75, 76, 77);
 
 	margin: 0px auto;
@@ -16,18 +16,18 @@ header h1 {
 	padding: 20px;
 	margin-top: 30px;
 	font-size: 16px;
-	background-color: rgb(8, 8, 7);
-	color: white;
-	border-color: #555;
-	border: 3px solid rgb(87, 84, 86);
-	border-radius: 30px;
+	
+	
+	transition: 0.1s;
+	
 	user-select: none;
 	cursor: pointer;
 }
-.button:active {
-	background-color: firebrick;
-	transform: scale(0.98);
-	transition: 0.3s;
+.button:hover{
+	
+	user-select: none;
+	transition: 0.1s;
+	color: firebrick;
 }
 div {
 	display: flex;
@@ -37,8 +37,8 @@ div {
 }
 #text {
 	/* 	border:4px solid rgb(23,80,163); */
-	color: white;
-	border-radius: 10px;
+	color: #555;
+	
 	user-select: none;
 	height: 100px;
 	font-size: 1.2em;
@@ -46,6 +46,8 @@ div {
 	text-align: center;
 	max-width: 70vw;
 	margin-top: 150px;
+	border-radius: 10px;
+
 }
 footer {
 	position: absolute;
