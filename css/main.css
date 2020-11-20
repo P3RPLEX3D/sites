@@ -28,8 +28,8 @@ h2 {
 }
 em {
 	color:#333;
-	text-align: center;
-	padding: 20px;
+	
+	
 	font-size: 0.75em;
 }
 section {
@@ -45,14 +45,17 @@ li {
 }
 #one {
 	background-color: #272635;
+	height: 100vh;
 	
 }
 #two {
-	background-color: #e8e9f3;
-	color: black;
+	background-color: #272727;
+	
+	height: 100vh;
 	
 }
 #three {
 	background-color: #272635;
+	height: 100vh;
 	
 }
