@@ -28,6 +28,7 @@ h2 {
 	text-align: center;
 	padding: 20px;
 	border-bottom: 1px solid;
+	background-color: #393f4d;
 }
 em {
 	color:rgb(218, 211, 211);
@@ -47,19 +48,19 @@ li {
 	padding: 20px;
 }
 #one {
-	background-color: #feda6a;
+	background-color: #272635;
 	height: 100vh;
-	color: black;
+	color: #feda6a;
 }
 #two {
-	background-color: #feda6a;
+	background-color: #272635;
 	height: 100vh;
-	color: black;
+	color: #feda6a;
 	
 }
 #three {
-	background-color: #feda6a;
+	background-color: #272635;
 	height: 100vh;
-	color: black;
+	color: #feda6a;
 	
 }
