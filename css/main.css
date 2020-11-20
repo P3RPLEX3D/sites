@@ -3,8 +3,8 @@
 	margin: 0 auto;
 }
 html, body {
-	background-color: #e8e9f3;
-	color: #eee;
+	background-color: #272635;
+	color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	
 }
@@ -12,23 +12,25 @@ header {
 	text-align: center;
 	padding: 20px;
 	font-family: 'Montserrat', sans-serif;
-	background-color: #e8e9f3;
-	color: #333;
+	background-color: #393f4d;
+	color:#feda6a;
 	border-bottom: 1px solid;
 
 
 }
 a	{
 	text-decoration: none;
-	color: black;
+	color:#feda6a;
 	font-weight: bold;
 	
 }
 h2 {
 	text-align: center;
+	padding: 20px;
+	border-bottom: 1px solid;
 }
 em {
-	color:#333;
+	color:rgb(0, 0, 0);
 	
 	
 	font-size: 0.75em;
@@ -45,18 +47,19 @@ li {
 	padding: 20px;
 }
 #one {
-	background-color: #272635;
+	background-color: #feda6a;
 	height: 100vh;
-	
+	color: black;
 }
 #two {
-	background-color: #272635;
-	
+	background-color: #feda6a;
 	height: 100vh;
+	color: black;
 	
 }
 #three {
-	background-color: #272635;
+	background-color: #feda6a;
 	height: 100vh;
+	color: black;
 	
 }
