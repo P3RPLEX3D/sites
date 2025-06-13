@@ -1,29 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-	<title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Pound Dumbbell Hypertrophy Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .day-card {
+            transition: all 0.2s ease-in-out;
+            border: 2px solid transparent;
+        }
+        .day-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .today {
+            border-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+        .workout-a { background-color: #dbeafe; }
+        .workout-b { background-color: #e0e7ff; }
+        .rest-day { background-color: #f3f4f6; border-color: #e5e7eb; }
+        .selected-day {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+            transform: translateY(-4px);
+        }
+    </style>
 </head>
-<body>
-	<header>
-		<h1>Workout 2/1</h1>
-		<section><em> this is a workout that requires 2 days of hard work with one day off</em></section>
-	</header>
-	<ul>
-		<li><a href="html/day1.html">DAY 1</a></li>
-		<li><a href="html/day2.html">DAY 2</a></li>
-		<li><a href="html/day3.html">DAY 3</a></li>
-	</ul>
-	
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">30-Pound Dumbbell Hypertrophy Plan</h1>
+            <p class="mt-2 text-lg text-gray-600">Your complete guide to building muscle with fixed-weight dumbbells.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Left Column: Weekly Planner and Workout Details -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Weekly Planner -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-between mb-4">
+                        <button id="prev-week" class="p-2 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">&lt; Prev</button>
+                        <h2 id="week-display" class="text-xl sm:text-2xl font-semibold text-center"></h2>
+                        <button id="next-week" class="p-2 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">Next &gt;</button>
+                    </div>
+                    <div id="weekly-planner" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                        <!-- Weekly planner days will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Workout Display -->
+                <div id="workout-display" class="bg-white p-6 rounded-lg shadow-md min-h-[300px]">
+                    <h3 id="workout-title" class="text-2xl font-bold text-gray-900 mb-4">Select a day to see the workout.</h3>
+                    <div id="workout-content" class="space-y-4">
+                        <!-- Workout details will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Planner, Docs, Videos -->
+            <div class="space-y-8">
+                <!-- Workout Planner Info -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Workout Planner</h3>
+                    <p class="mb-4 text-gray-600">The schedule alternates between two full-body workouts to ensure balanced muscle development.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 rounded-md bg-blue-100 flex-shrink-0 mr-3"></div>
+                            <div>
+                                <h4 class="font-semibold">Workout A</h4>
+                                <p class="text-sm text-gray-500">Focuses on core compound lifts like squats and rows.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <div class="w-6 h-6 rounded-md bg-indigo-100 flex-shrink-0 mr-3"></div>
+                            <div>
+                                <h4 class="font-semibold">Workout B</h4>
+                                <p class="text-sm text-gray-500">Includes variations like lunges and push-ups.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <div class="w-6 h-6 rounded-md bg-gray-200 flex-shrink-0 mr-3"></div>
+                            <div>
+                                <h4 class="font-semibold">Rest Day</h4>
+                                <p class="text-sm text-gray-500">Crucial for muscle recovery and growth.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Documentation -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Key Principles</h3>
+                    <div class="space-y-4 text-gray-600 text-sm">
+                        <details>
+                            <summary class="font-semibold cursor-pointer">The Philosophy: Making 30lbs Heavy</summary>
+                            <p class="mt-2">Since we can't increase the weight, our focus shifts to *how* we lift it. This is done through controlled tempo (3-1-2-1), high reps (10-20), short rest (60-90s), and a strong mind-muscle connection.</p>
+                        </details>
+                        <hr>
+                        <details>
+                            <summary class="font-semibold cursor-pointer">How to Progress</summary>
+                             <p class="mt-2">Continuously challenge your muscles by: 1) Adding more reps per set. 2) Adding an extra set. 3) Decreasing rest time. 4) Incorporating pauses at the hardest part of the lift.</p>
+                        </details>
+                         <hr>
+                        <details>
+                            <summary class="font-semibold cursor-pointer">Cool-Down & Recovery</summary>
+                             <p class="mt-2">After each workout, stretch the muscles you worked. Consume a protein-rich meal within 1-2 hours, and aim for 7-9 hours of quality sleep for optimal muscle repair.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Video Library -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Exercise Video Library</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Goblet Squat</h4>
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe src="https://www.youtube.com/embed/CqlqL6m_gE4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                         <div>
+                            <h4 class="font-semibold mb-2">Bent-Over Dumbbell Row</h4>
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe src="https://www.youtube.com/embed/pYcpY20QaE8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Romanian Deadlift (RDL)</h4>
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe src="https://www.youtube.com/embed/uc9_Fwg_gW0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white mt-8 py-4">
+         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>Disclaimer: Consult with a healthcare professional before beginning any new exercise program. If you feel sharp pain, stop the exercise immediately.</p>
+        </div>
+    </footer>
+
+    <script>
+        const weekDisplayEl = document.getElementById('week-display');
+        const weeklyPlannerEl = document.getElementById('weekly-planner');
+        const prevWeekBtn = document.getElementById('prev-week');
+        const nextWeekBtn = document.getElementById('next-week');
+        const workoutTitleEl = document.getElementById('workout-title');
+        const workoutContentEl = document.getElementById('workout-content');
+
+        let currentDate = new Date();
+
+        const workoutA = {
+            title: 'Full Body Workout A',
+            type: 'A',
+            exercises: [
+                { name: 'Goblet Squats', sets: 4, reps: '15-20', notes: 'Quads, Glutes' },
+                { name: 'Bent-Over Dumbbell Row', sets: 4, reps: '12-15', notes: 'Back (Lats, Rhomboids)' },
+                { name: 'Dumbbell Floor Press', sets: 4, reps: '12-15', notes: 'Chest, Triceps' },
+                { name: 'Standing Overhead Press', sets: 3, reps: '10-15', notes: 'Shoulders' },
+                { name: 'Bicep Curls', sets: 3, reps: '12-18', notes: 'Biceps' },
+                { name: 'Overhead Triceps Ext.', sets: 3, reps: '12-18', notes: 'Triceps' }
+            ]
+        };
+
+        const workoutB = {
+            title: 'Full Body Workout B',
+            type: 'B',
+            exercises: [
+                { name: 'Romanian Deadlifts (RDL)', sets: 4, reps: '15-20', notes: 'Hamstrings, Glutes' },
+                { name: 'Dumbbell Lunges', sets: 3, reps: '10-15 per leg', notes: 'Quads, Glutes' },
+                { name: 'Dumbbell Push-Ups', sets: 4, reps: 'To Failure', notes: 'Chest, Shoulders, Triceps' },
+                { name: 'Single-Arm Dumbbell Row', sets: 3, reps: '10-15 per side', notes: 'Back (Lats)' },
+                { name: 'Bent-Over Lateral Raise', sets: 3, reps: '15-20', notes: 'Shoulders (Rear Delts)' },
+                { name: 'Hammer Curls', sets: 3, reps: '15-20', notes: 'Biceps, Forearms' }
+            ]
+        };
+        
+        const restDay = {
+            title: 'Rest Day',
+            type: 'Rest',
+            exercises: [
+                { name: 'Active recovery is encouraged.', notes: 'Focus on stretching, light walking, and proper nutrition to help your muscles repair and grow.' }
+            ]
+        };
+
+        function getWorkoutForDay(date) {
+            const dayOfWeek = date.getDay(); // Sunday - 0, Monday - 1, etc.
+            // A simple schedule: Mon, Wed, Fri are workout days.
+            // Mon: A, Tue: Rest, Wed: B, Thu: Rest, Fri: A, Sat: Rest, Sun: Rest
+            // This is a common and effective split.
+            switch (dayOfWeek) {
+                case 1: // Monday
+                case 5: // Friday
+                    return workoutA;
+                case 3: // Wednesday
+                    return workoutB;
+                default: // Tuesday, Thursday, Saturday, Sunday
+                    return restDay;
+            }
+        }
+
+        function displayWorkout(workout, dayString) {
+            workoutTitleEl.textContent = `${workout.title} - ${dayString}`;
+            workoutContentEl.innerHTML = '';
+            
+            if (!workout.exercises) return;
+
+            const table = document.createElement('table');
+            table.className = 'w-full text-left table-auto';
+            
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr class="bg-gray-50 border-b">
+                    <th class="p-4 font-semibold">Exercise</th>
+                    <th class="p-4 font-semibold hidden sm:table-cell">Sets</th>
+                    <th class="p-4 font-semibold hidden sm:table-cell">Reps</th>
+                    <th class="p-4 font-semibold">Notes</th>
+                </tr>
+            `;
+
+            if (workout.type !== 'Rest') {
+                table.appendChild(thead);
+            }
+            
+            const tbody = document.createElement('tbody');
+
+            workout.exercises.forEach(ex => {
+                const row = document.createElement('tr');
+                row.className = 'border-b';
+                if (ex.sets) { // It's a regular exercise
+                     row.innerHTML = `
+                        <td class="p-4">${ex.name}</td>
+                        <td class="p-4 hidden sm:table-cell">${ex.sets}</td>
+                        <td class="p-4 hidden sm:table-cell">${ex.reps}</td>
+                        <td class="p-4 text-sm text-gray-600">${ex.notes}</td>
+                    `;
+                } else { // It's a rest day message
+                     row.innerHTML = `
+                        <td class="p-4 font-semibold">${ex.name}</td>
+                        <td class="p-4 text-sm text-gray-600" colspan="3">${ex.notes}</td>
+                    `;
+                }
+                tbody.appendChild(row);
+            });
+            table.appendChild(tbody);
+            workoutContentEl.appendChild(table);
+        }
+
+        function generateWeek(date) {
+            weeklyPlannerEl.innerHTML = '';
+            const today = new Date();
+            const startOfWeek = new Date(date);
+            startOfWeek.setDate(date.getDate() - date.getDay()); // Set to last Sunday
+
+            const endOfWeek = new Date(startOfWeek);
+            endOfWeek.setDate(startOfWeek.getDate() + 6);
+
+            weekDisplayEl.textContent = `${startOfWeek.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endOfWeek.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`;
+
+            for (let i = 0; i < 7; i++) {
+                const dayDate = new Date(startOfWeek);
+                dayDate.setDate(startOfWeek.getDate() + i);
+
+                const dayCard = document.createElement('button');
+                const workout = getWorkoutForDay(dayDate);
+                
+                dayCard.className = 'day-card p-3 rounded-lg cursor-pointer focus:outline-none flex flex-col items-center justify-center space-y-1';
+                
+                const dayName = document.createElement('span');
+                dayName.textContent = dayDate.toLocaleDateString('en-US', { weekday: 'short' });
+                dayName.className = 'text-sm font-semibold text-gray-700';
+                
+                const dayNumber = document.createElement('span');
+                dayNumber.textContent = dayDate.getDate();
+                dayNumber.className = 'text-2xl font-bold';
+
+                const workoutType = document.createElement('span');
+                workoutType.textContent = workout.type;
+                workoutType.className = 'text-xs font-medium px-2 py-0.5 rounded-full';
+
+
+                if(workout === workoutA) {
+                    dayCard.classList.add('workout-a');
+                    workoutType.classList.add('bg-blue-200', 'text-blue-800');
+                } else if (workout === workoutB) {
+                    dayCard.classList.add('workout-b');
+                    workoutType.classList.add('bg-indigo-200', 'text-indigo-800');
+                } else {
+                    dayCard.classList.add('rest-day');
+                    workoutType.classList.add('bg-gray-300', 'text-gray-800');
+                }
+                
+                if (dayDate.toDateString() === today.toDateString()) {
+                    dayCard.classList.add('today');
+                }
+
+                dayCard.appendChild(dayName);
+                dayCard.appendChild(dayNumber);
+                dayCard.appendChild(workoutType);
+                
+                dayCard.addEventListener('click', () => {
+                    const selected = document.querySelector('.selected-day');
+                    if(selected) selected.classList.remove('selected-day');
+                    dayCard.classList.add('selected-day');
+                    const dayString = dayDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+                    displayWorkout(workout, dayString);
+                });
+                weeklyPlannerEl.appendChild(dayCard);
+            }
+        }
+        
+        prevWeekBtn.addEventListener('click', () => {
+            currentDate.setDate(currentDate.getDate() - 7);
+            generateWeek(currentDate);
+        });
+
+        nextWeekBtn.addEventListener('click', () => {
+            currentDate.setDate(currentDate.getDate() + 7);
+            generateWeek(currentDate);
+        });
+        
+        window.addEventListener('load', () => {
+            generateWeek(currentDate);
+            // Automatically select and display today's workout on load
+            const todayEl = document.querySelector('.today');
+            if (todayEl) {
+                todayEl.click();
+            } else {
+                // if today is not in the current week view, click the first day
+                const firstDay = weeklyPlannerEl.querySelector('.day-card');
+                if (firstDay) {
+                    firstDay.click();
+                }
+            }
+        });
+    </script>
 </body>
 </html>
+	
