@@ -1,33 +1,275 @@
 
-
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-	<title>Name Generator</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content='Finally a decent Guild name Generator'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Name Forger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles for Medieval Theme */
+        :root {
+            --color-parchment: #f9f4e2;
+            --color-ink: #3c2a1a;
+            --color-gold: #b8860b;
+            --color-shadow: #8d7b68;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1f2937, #111827); /* Dark Slate Background */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: var(--color-parchment);
+            color: var(--color-ink);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-shadow) inset;
+            border: 4px solid var(--color-ink);
+            font-family: 'Cinzel', serif; /* Use Cinzel for titles and output */
+        }
+
+        .label-style {
+            font-weight: 700;
+            color: var(--color-ink);
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        /* Custom Select/Input Styling */
+        select, button {
+            border: 2px solid var(--color-ink);
+            background-color: #fff9e8;
+            transition: all 0.2s;
+        }
+
+        select:focus, button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--color-gold);
+        }
+
+        button.primary:hover {
+            background-color: var(--color-gold);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Radio Group Styling */
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+
+        .radio-group label {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 2px solid var(--color-ink);
+            border-radius: 9999px; /* Full rounded corners */
+            transition: all 0.3s;
+            background-color: #f0e6c5;
+        }
+
+        .radio-group input[type="radio"]:checked + label {
+            background-color: var(--color-ink);
+            color: var(--color-parchment);
+            box-shadow: 0 0 10px var(--color-gold);
+        }
+
+        .radio-group label:hover:not(.radio-group input[type="radio"]:checked + label) {
+            background-color: #e0d0a5;
+        }
+
+        /* Output Styling */
+        #output {
+            background-color: #fff;
+            border: 1px dashed var(--color-shadow);
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            text-shadow: 2px 2px 0px var(--color-ink);
+            word-break: break-words;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader {
+            border-top-color: var(--color-gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+    </style>
 </head>
-
 <body>
-	<header>
-		<h1>Human Name Generator</h1>
-	</header>
-	<div id="text"></div>
-	<div>
-		<div class="button" id="myBoy"><strong>Boy Name</strong></div>
-		<div class="button" id="myGirl"><strong>Girl Name</strong></div>
-	</div>
-	<div>
-		<footer> &copy; Jacob Fillpot 2020 </footer>
-	</div>
-</body>
 
-</html>
-<!-- partial -->
-  <script  src="js/main.js"></script>
+    <div id="app" class="card p-6 md:p-10 w-full max-w-sm md:max-w-lg lg:max-w-xl mx-4 my-8 rounded-xl">
+        <h1 class="text-4xl text-center mb-6 font-bold text-gray-900 leading-tight">
+            The Name Forger
+        </h1>
+        <p class="text-center mb-8 text-lg font-medium">
+            Seek a name worthy of the chronicles of old.
+        </p>
 
+        <!-- Configuration Inputs -->
+        <div class="space-y-6">
+
+            <!-- Gender Selection -->
+            <div>
+                <label class="block mb-2 label-style text-lg">Choose Lineage:</label>
+                <div id="gender-selection" class="radio-group flex justify-center space-x-4">
+                    <input type="radio" id="masculine" name="gender" value="Masculine" checked>
+                    <label for="masculine" class="text-sm md:text-base">Masculine</label>
+
+                    <input type="radio" id="feminine" name="gender" value="Feminine">
+                    <label for="feminine" class="text-sm md:text-base">Feminine</label>
+                </div>
+            </div>
+
+            <!-- Region Selection (Geographical Location) -->
+            <div>
+                <label for="region" class="block mb-2 label-style text-lg">Select Realm:</label>
+                <select id="region" class="w-full p-3 rounded-lg text-lg appearance-none cursor-pointer">
+                    <option value="English">Anglo-Saxon / English</option>
+                    <option value="French">Frankish / French</option>
+                    <option value="Norse">Viking / Norse</option>
+                    <option value="German">Germanic / Holy Roman Empire</option>
+                    <option value="Iberian">Spanish / Iberian</option>
+                </select>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generate-button"
+                    class="primary w-full p-4 text-xl rounded-lg font-bold uppercase tracking-wider mt-6 shadow-md"
+                    onclick="generateName()">
+                Forge Name
+            </button>
+        </div>
+
+        <!-- Output Display -->
+        <div class="mt-10">
+            <h2 class="text-xl label-style mb-3 text-center">The Scrivener's Scroll</h2>
+            <div id="output" class="p-4 rounded-lg text-center shadow-inner">
+                Awaiting your command...
+            </div>
+            <div id="loading-indicator" class="hidden text-center mt-4">
+                <div class="loader inline-block w-8 h-8 border-4 border-gray-200 rounded-full"></div>
+                <span class="ml-2 text-base text-gray-700">The quill writes...</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Global environment variables provided by the Canvas platform
+        const apiKey = "AIzaSyAZsKTlJG9Gogmq7vIOk5uDfiVhgqi38zQ";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        const outputDiv = document.getElementById('output');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const generateButton = document.getElementById('generate-button');
+
+        /**
+         * Converts a streamable fetch response to text.
+         * @param {Response} response - The fetch response object.
+         * @returns {Promise<string>} The response text.
+         */
+        async function convertResponseToText(response) {
+            const result = await response.json();
+            const candidate = result.candidates?.[0];
+
+            if (candidate && candidate.content?.parts?.[0]?.text) {
+                return candidate.content.parts[0].text.trim();
+            } else {
+                console.error("API response structure unexpected:", result);
+                return "A shadow fell upon the quill. Try again.";
+            }
+        }
+
+        /**
+         * Generates a medieval name using the Gemini API with exponential backoff for retries.
+         */
+        window.generateName = async function() {
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const region = document.getElementById('region').value;
+            const maxRetries = 3;
+            let attempt = 0;
+
+            outputDiv.textContent = '';
+            loadingIndicator.classList.remove('hidden');
+            generateButton.disabled = true;
+            generateButton.classList.add('opacity-50');
+
+            const systemPrompt = "You are a Master Scrivener and Genealogist specializing in historical and fantasy medieval names. Generate a single, authentic-sounding full name (first name and surname/byname) based on the user's request. DO NOT include any explanatory text, commentary, or punctuation like quotes. Only output the name itself.";
+
+            const userQuery = `Generate a full medieval name (first name and a descriptive surname/byname) for a ${gender} character from the ${region} cultural region. Ensure the name sounds historically plausible or strongly fantasy-inspired by the region.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            while (attempt < maxRetries) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        if (response.status === 429) {
+                            throw new Error('Rate limit exceeded. Retrying.');
+                        } else {
+                            throw new Error(`API returned status ${response.status}`);
+                        }
+                    }
+
+                    const name = await convertResponseToText(response);
+
+                    // Final check to ensure the output is not the error placeholder
+                    if (name.includes('shadow fell')) {
+                        throw new Error('Generated content was an error message. Retrying.');
+                    }
+
+                    outputDiv.textContent = name;
+                    outputDiv.style.color = '#3c2a1a'; // Revert color to ink on success
+                    break; // Success! Exit the loop.
+
+                } catch (error) {
+                    attempt++;
+                    console.error(`Attempt ${attempt} failed:`, error.message);
+                    if (attempt < maxRetries) {
+                        const delay = Math.pow(2, attempt) * 1000 + (Math.random() * 1000); // Exponential backoff
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        outputDiv.textContent = "The ancient scrolls are locked. Failed to forge a name after several attempts.";
+                        outputDiv.style.color = 'red';
+                    }
+                }
+            }
+
+            loadingIndicator.classList.add('hidden');
+            generateButton.disabled = false;
+            generateButton.classList.remove('opacity-50');
+        }
+
+        // Initialize with a default name on load
+        window.onload = () => {
+             // Delay to ensure all initial UI rendering is complete
+            setTimeout(() => {
+                // generateName(); // Uncomment this line if you want an initial name immediately
+                outputDiv.textContent = "Awaiting the forging...";
+            }, 100);
+        };
+
+    </script>
 </body>
 </html>
